@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Tasks - ESDT Central Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                ESDT Central Africa
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="tasks.html" class="active">Tasks</a></li>
+                <li><a href="deliverables.html">Deliverables</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="subsystems.html">Subsystems</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <img src="Logo.png" alt="ESDT Project Logo" class="page-header-logo">
+            <div class="page-header-text">
+                <h1>Research Tasks</h1>
+                <p>Six interconnected tasks spanning past, present, and future</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <div class="phase-section">
+                <div class="phase-title">What Then and What Now (Past/Current State and Drivers)</div>
+                <div class="task-grid">
+                    <div class="task-card">
+                        <div class="task-number">Task 1</div>
+                        <h3>Forest Structure Characterization</h3>
+                        <p>Characterize the current state of forest structure, intactness, and carbon storage using spaceborne and airborne remote sensing, combined with in situ field measurements.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Integration of GEDI, Landsat, and Sentinel satellite data</li>
+                                <li>Airborne LiDAR and SAR data processing</li>
+                                <li>Field inventory data collection and validation</li>
+                                <li>Wall-to-wall forest structure mapping</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">Task 2</div>
+                        <h3>Regional Drivers Analysis</h3>
+                        <p>Quantify regional drivers of change in forest extent and fragmentation using long-term Earth observation records and socio-economic datasets.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Long-term land cover change analysis (2000-present)</li>
+                                <li>Population and infrastructure data integration</li>
+                                <li>Protected areas and policy impact assessment</li>
+                                <li>Driver-response model development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">Task 3</div>
+                        <h3>Habitat Suitability Modeling</h3>
+                        <p>Model habitat suitability and biodiversity corridors using outputs from Task 1 and animal movement data derived from satellite tracking.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Animal movement data analysis (Movebank)</li>
+                                <li>Habitat suitability model development</li>
+                                <li>Connectivity corridor identification</li>
+                                <li>Species-specific conservation assessments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-section">
+                <div class="phase-title">What Next (Forecasting and Scenarios)</div>
+                <div class="task-grid">
+                    <div class="task-card">
+                        <div class="task-number">Task 4</div>
+                        <h3>Forest Change Forecasting</h3>
+                        <p>Forecast changes in forest extent, fragmentation, and carbon storage by integrating outputs from Tasks 1 and 2.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Land use change model development</li>
+                                <li>Near-term forecasts (present-2050)</li>
+                                <li>Scenario-based projections</li>
+                                <li>Uncertainty quantification</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">Task 5</div>
+                        <h3>Climate Scenario Projections</h3>
+                        <p>Project future forest structure, intactness, and carbon storage under climate scenarios using the Ecosystem Demography Model (ED2.2) and its emulator, parameterized with outputs from Tasks 2 and 3.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>ED2.2 model calibration and validation</li>
+                                <li>Climate forcing data integration</li>
+                                <li>Long-term vegetation projections (2017-2100)</li>
+                                <li>Surrogate model development for rapid exploration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="task-card">
+                        <div class="task-number">Task 6</div>
+                        <h3>Future Corridor Forecasting</h3>
+                        <p>Forecast habitat suitability and biodiversity corridors by combining models from Task 3 with projected ecosystem states from Task 5.</p>
+                        <div class="task-details">
+                            <h4>Key Activities:</h4>
+                            <ul>
+                                <li>Future habitat suitability projections</li>
+                                <li>Corridor connectivity under climate change</li>
+                                <li>Conservation priority identification</li>
+                                <li>Adaptive management scenario testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jet Propulsion Laboratory | Principal Investigator: Seungwon Lee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Earth System Digital Twin for Central Africa Carbon and Biodiversity Corridors</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

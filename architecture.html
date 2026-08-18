@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Architecture - ESDT Central Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                ESDT Central Africa
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="deliverables.html">Deliverables</a></li>
+                <li><a href="architecture.html" class="active">Architecture</a></li>
+                <li><a href="subsystems.html">Subsystems</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <img src="Logo.png" alt="ESDT Project Logo" class="page-header-logo">
+            <div class="page-header-text">
+                <h1>System Architecture</h1>
+                <p>Technical design of the Earth System Digital Twin</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Architecture Overview</h2>
+            <p>The schematic architecture of the proposed ESDT integrates external data sources, internal processing subsystems, and visualization capabilities to deliver actionable insights for science and application users. The system is designed around seven interconnected subsystems that work together seamlessly.</p>
+        </section>
+
+        <section class="section">
+            <h2>System Architecture Diagram</h2>
+            <img src="System Architecture Diagram.png" alt="ESDT System Architecture Diagram" class="architecture-image">
+        </section>
+
+        <section class="section">
+            <h2>Architecture Components</h2>
+
+            <div class="architecture-component">
+                <h3>External Data Sources</h3>
+                <p>The system integrates data from a diverse set of external sources including:</p>
+                <ul>
+                    <li><strong>Field Networks:</strong> ForestPlots.net, ForestGEO, AfriTron, Liege University, CongoFlux</li>
+                    <li><strong>Remote Sensing:</strong> GEDI (spaceborne LiDAR), Airborne LiDAR, Airborne SAR (AfriSAR), Drone LiDAR</li>
+                    <li><strong>Satellite Imagery:</strong> Landsat, VHR, ALOS-PALSAR</li>
+                    <li><strong>Land Cover Products:</strong> GFC, TMF, RADD, GLAD</li>
+                    <li><strong>Animal Tracking:</strong> Movebank</li>
+                </ul>
+            </div>
+
+            <div class="architecture-component">
+                <h3>Internal Subsystems</h3>
+                <p>Seven specialized subsystems process and analyze data:</p>
+                <div class="subsystem-list">
+                    <div class="subsystem-item">
+                        <strong>Ingest Subsystem</strong> - Acquires and ingests external data
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>Record Subsystem</strong> - Stores and manages data efficiently
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>Model Subsystem</strong> - Runs process-based and surrogate models
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>What-Then & What-Now Subsystem</strong> - Analyzes current state
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>What-Next Subsystem</strong> - Generates future forecasts
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>Visualization Subsystem</strong> - Creates interactive visualizations
+                    </div>
+                    <div class="subsystem-item">
+                        <strong>Front-End Subsystem</strong> - Provides web portal access
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture-component">
+                <h3>Data Flow</h3>
+                <p>The architecture supports efficient data flow through:</p>
+                <ul>
+                    <li><strong>Internally Generated Data:</strong> Processed outputs from analytical subsystems</li>
+                    <li><strong>Model Call Pipelines:</strong> Automated workflows for model execution</li>
+                    <li><strong>API Routing:</strong> RESTful APIs connecting subsystems and users</li>
+                </ul>
+            </div>
+
+            <div class="architecture-component">
+                <h3>Cloud Infrastructure</h3>
+                <p>The system leverages Azure cloud services for scalability and performance:</p>
+                <ul>
+                    <li><strong>Azure Blob Storage:</strong> Data storage in Planetary Computer</li>
+                    <li><strong>Azure Functions:</strong> Serverless compute for data ingestion and on-demand models</li>
+                    <li><strong>Azure Batch:</strong> High-performance computing for batch model runs</li>
+                    <li><strong>Azure Databricks:</strong> Big data processing and analytics</li>
+                    <li><strong>Azure Machine Learning:</strong> ML model training and deployment</li>
+                    <li><strong>Azure Apps:</strong> Web application hosting</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jet Propulsion Laboratory | Principal Investigator: Seungwon Lee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Earth System Digital Twin for Central Africa Carbon and Biodiversity Corridors</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Deliverables - ESDT Central Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                ESDT Central Africa
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="deliverables.html" class="active">Deliverables</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="subsystems.html">Subsystems</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <img src="Logo.png" alt="ESDT Project Logo" class="page-header-logo">
+            <div class="page-header-text">
+                <h1>Project Deliverables</h1>
+                <p>Datasets and models across three foundational pillars</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Deliverables Overview</h2>
+            <p>Our project will deliver nine major datasets and models organized across three pillars: observational foundations, process models, and forecasts. Each deliverable is the responsibility of partner institutions with specialized expertise.</p>
+        </section>
+
+        <section class="section">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 10%">#</th>
+                        <th style="width: 65%">Deliverables</th>
+                        <th style="width: 25%">Organization</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="pillar-header">
+                        <td colspan="3">Pillar 1 - Observational Foundation (historical to present)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">1</span></td>
+                        <td>
+                            <strong>Wall-to-wall forest structure time-series (2017–present)</strong>
+                            <p class="deliverable-detail">Integration of GEDI spaceborne LiDAR, Landsat optical imagery, and Sentinel radar data to produce comprehensive forest structure metrics including canopy height, vertical structure, and biomass estimates.</p>
+                        </td>
+                        <td>Maryland</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">2</span></td>
+                        <td>
+                            <strong>LCLUC time-series (2000–present)</strong>
+                            <p class="deliverable-detail">Harmonized legacy land-cover products (MODIS MCD12Q1, ESA CCI, GLAD, Dynamic World) and deforestation products (RADD, GFC, TMF) providing consistent land cover and land use change records.</p>
+                        </td>
+                        <td>JPL</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">3</span></td>
+                        <td>
+                            <strong>LCLUC driver stack</strong>
+                            <p class="deliverable-detail">Comprehensive dataset including population density, road networks, hydrology (stream location and depth), urban footprint, night-time lights, protected areas, and topography.</p>
+                        </td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr class="pillar-header">
+                        <td colspan="3">Pillar 2 - Process Models (current, explanatory)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">4</span></td>
+                        <td>
+                            <strong>Driver-LCLUC linkage models</strong>
+                            <p class="deliverable-detail">Data-driven or process-based models linking socio-economic and environmental drivers (#3) to observed land cover and land use change (#2).</p>
+                        </td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">5</span></td>
+                        <td>
+                            <strong>Habitat suitability and biodiversity corridors</strong>
+                            <p class="deliverable-detail">Models combining forest structure (#1) with animal movement data to identify suitable habitat and critical connectivity corridors for key species.</p>
+                        </td>
+                        <td>NCMNS</td>
+                    </tr>
+                    <tr class="pillar-header">
+                        <td colspan="3">Pillar 3 - Forecasts (present–2050; vegetation to 2100)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">6</span></td>
+                        <td>
+                            <strong>Vegetation demographic model time-series (2017–2100)</strong>
+                            <p class="deliverable-detail">ED2.2 ecosystem demography model simulations projecting forest structure, composition, and carbon dynamics under climate change scenarios.</p>
+                        </td>
+                        <td>Maryland and Cornell</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">7</span></td>
+                        <td>
+                            <strong>Driver forecasts (present–2050)</strong>
+                            <p class="deliverable-detail">Projected changes in socio-economic and environmental drivers based on current trends and scenario assumptions.</p>
+                        </td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">8</span></td>
+                        <td>
+                            <strong>LCLUC forecasts (present–2050)</strong>
+                            <p class="deliverable-detail">Projected land cover and land use change using driver forecasts (#7) and observed historical trends (#2).</p>
+                        </td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td><span class="deliverable-number">9</span></td>
+                        <td>
+                            <strong>Forecasted habitat suitability and corridors</strong>
+                            <p class="deliverable-detail">Future projections of habitat suitability and biodiversity corridors combining habitat models (#5) with vegetation forecasts (#6) and LCLUC projections (#8).</p>
+                        </td>
+                        <td>NCMNS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jet Propulsion Laboratory | Principal Investigator: Seungwon Lee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Earth System Digital Twin for Central Africa Carbon and Biodiversity Corridors</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

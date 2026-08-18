@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsystems - ESDT Central Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                ESDT Central Africa
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="deliverables.html">Deliverables</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="subsystems.html" class="active">Subsystems</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <img src="Logo.png" alt="ESDT Project Logo" class="page-header-logo">
+            <div class="page-header-text">
+                <h1>Subsystem Details</h1>
+                <p>Deep dive into the seven interconnected subsystems</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Subsystem Overview</h2>
+            <p>The ESDT is composed of seven interconnected subsystems, each with specialized functions that work together to provide comprehensive digital twin capabilities. These subsystems handle everything from data ingestion to user-facing visualizations.</p>
+        </section>
+
+        <div class="subsystems-grid">
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-ingest">I</span> Ingest Subsystem</h3>
+                <p>The Ingest Subsystem will inquire and download newly available data and ingest them into our database and shared disk (e.g., Planetary Computer Data Catalog). Our externally sourced data will come from a large variety of providers listed in the architecture diagram.</p>
+                <p>As our destination will be Azure Blob storage in the Planetary Computer, we will leverage <strong>Azure Functions</strong> to schedule data acquisitions from each source. Azure Functions provide a method to schedule simple workflows while only using the necessary computing resources to do so as needed (e.g., "serverless" compute), where the main implementation required is a script which can be written in a variety of programming languages.</p>
+                <p>We will provide individual scripts for each data source as separate Azure Functions which will form the basis of our Ingest Subsystem. We will place the data in their native formats along with necessary cataloguing information.</p>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-record">R</span> Record Subsystem</h3>
+                <p>The Record Subsystem will store externally sourced (from the Ingest Subsystem) and internally generated data (from What-Then, What-Now, and What-Next Subsystems) in an optimized and accessible format into our database and shared disk. It will have the APIs to read and write data into the shared database.</p>
+                <p>The input data will primarily be available in two common native formats: <strong>Cloud Optimized GeoTIFF</strong> and <strong>NetCDF</strong>. An optimal storage strategy would require an API that can map individual array chunks in these files to their byte ranges and retrieving them concurrently and asynchronously, while also allowing for the capability to perform decompression in parallel.</p>
+                <p>To achieve optimal storage, we will generate <strong>kerchunk references information</strong> for our datasets which can generate the necessary side-car information that properly maps byte-ranges to array chunks in a manner that is compatible with the <strong>Zarr specification</strong>.</p>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-model">M</span> Model Subsystem</h3>
+                <p>The Model Subsystem will house land use change and process-based vegetation ecosystem models and generate computationally efficient approximations ("surrogate models") for more responsive What-Next forecasting scenario exploration.</p>
+                <p>Models will be invoked in either <strong>batch or on-demand mode</strong>, with a requirement for on-demand models to be responsive within 30 seconds of invocation. In batch mode, models may take longer to run and will be triggered by events or schedules to generate and store results in the Record Subsystem for later access.</p>
+                <p>The Model Subsystem will leverage Azure cloud services:</p>
+                <ul>
+                    <li><strong>Azure Batch jobs</strong> for high-performance batch processing</li>
+                    <li><strong>Serverless Azure Functions</strong> for on-demand models triggered by user requests</li>
+                    <li><strong>Azure Databricks platform</strong> and <strong>Azure Machine Learning services</strong> for custom workflows, data processing, analysis, and ML model training and deployment</li>
+                </ul>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-what-then-now">WN</span> What-Then & What-Now Subsystem</h3>
+                <p>The What-Then & What-Now Subsystem will integrate diverse geospatial data layers including satellite imagery, aerial surveys, field observations, and crowdsourced data to generate up-to-date maps delineating:</p>
+                <ul>
+                    <li>Forest extent and fragmentation</li>
+                    <li>Forest structure and carbon</li>
+                    <li>Habitat suitability and connectivity corridors across the region</li>
+                </ul>
+                <p>For swift access and manipulation of substantial datasets, we will capitalize on prominent big data processing libraries, including <strong>Dask, Ray, Modin, Vaex, and RAPIDS</strong>. Advanced geospatial analytics leveraging tools such as <strong>ArcGIS, QGIS, and Google Earth Engine</strong> will combine the multi-source data using machine learning techniques.</p>
+                <p>The outputs will include both statistical summaries of total protected areas, vegetation categories, and carbon storage estimates as well as interactive maps and dashboards visualizing the integrated data layers. Automated workflows will refresh the data integration and mapping on a regular basis as new observations become available.</p>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-what-next">WX</span> What-Next Subsystem</h3>
+                <p>The What-Next Subsystem will forecast the future state of the Central Africa carbon and biodiversity corridors by running land use change, vegetation demography, and ecological models with updated initial states constrained by new observations.</p>
+                <p>These dynamic simulations will be initialized using the habitat and vegetation maps from the What-Now digital replica to establish accurate starting conditions. Outputs will consist of projected maps animating changes in crucial carbon sinks and habitat connectivity under the currently most anticipated scenario (business-as-usual greenhouse emissions, unchangeable Protected area network).</p>
+                <p>Interactive visualization will facilitate comparison of present and forecasted conditions. <strong>NASA High End Computing (HEC) resources</strong> will enable large-scale, high-resolution modeling (e.g., ED2.2 model simulation at a 100 m resolution across Congo Rainforest). We will calibrate our models for a past time frame (2000-2020) and validate them in the subsequent years against ground monitoring data.</p>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-visualization">V</span> Visualization Subsystem</h3>
+                <p>The Visualization Subsystem will facilitate the visualization of the digital replica and digital forecast via interactive visualization tools. The data visualization tools will be built as several single page applications using the robust and well-supported <strong>ReactJS framework</strong>.</p>
+                <p>It will also use the <strong>Common Mapping Client (CMC) framework</strong>, which was developed at JPL to enable faster and more maintainable development of GIS visualization tools, as a basis for modular and extensible architecture.</p>
+                <p>The tools will provide users the ability to query and view the various types of data (e.g., NetCDF, GeoTiff, Shape Files) produced by the project as well as manipulate how that data is presented to them. The interface will allow users to view multiple datasets across a wide range of spatial and temporal resolutions.</p>
+                <p>We will use <strong>GeoServer</strong>, an open-source and robust tool for GIS applications, to display each dataset. Using CMC and GeoServer in concert will allow the visualizations to be built using community-supported formats and APIs.</p>
+            </div>
+
+            <div class="subsystem-card">
+                <h3><span class="subsystem-icon icon-frontend">F</span> Front-End Subsystem</h3>
+                <p>The Front-End Subsystem will be a web portal with interactive interfaces to products generated by the What-Now Subsystem and the What-Next Subsystem. This subsystem will use the <strong>FastAPI Python server framework</strong> to provide API services, using FastAPI's asynchronous request processing capabilities to serve requests quickly while reducing slowdowns incurred by I/O overhead.</p>
+                <p>The Front-End will synthesize and display data from the APIs of the What-Then, What-Now, What-Next, and Visualization subsystems in the forms of maps, time series, animations, and other visualization types.</p>
+                <p>Using the Python-based framework for the Front-End will allow for the utilization of many GIS, science data, and image processing libraries that are standard in the scientific community. This will allow for more seamless implementation of:</p>
+                <ul>
+                    <li>GIS queries (leveraging the <strong>Azure Maps API</strong>)</li>
+                    <li>Visualization post-processing</li>
+                    <li>Output in formats most commonly used by users</li>
+                </ul>
+                <p>This Subsystem will be designed to be hosted by <strong>Azure Apps</strong> to simplify deployment and handle scaling and load-balancing.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jet Propulsion Laboratory | Principal Investigator: Seungwon Lee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Earth System Digital Twin for Central Africa Carbon and Biodiversity Corridors</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview - ESDT Central Africa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                ESDT Central Africa
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.html" class="active">Overview</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="deliverables.html">Deliverables</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="subsystems.html">Subsystems</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="page-header-content">
+            <img src="Logo.png" alt="ESDT Project Logo" class="page-header-logo">
+            <div class="page-header-text">
+                <h1>Project Overview</h1>
+                <p>Understanding the scope and objectives of the Earth System Digital Twin</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Mission Statement</h2>
+            <p>We will design and develop an <strong>Earth System Digital Twin (ESDT)</strong> to represent and forecast carbon storage dynamics and habitat connectivity across Central Africa. The proposed ESDT will integrate models that quantify and predict the impacts of key stressors on the region's ecosystems, including climate change, land-use change, and biodiversity loss.</p>
+            <p style="margin-top: 1rem;">This system will provide a digital representation and near-term forecasts of tropical forest structure, biomass, and biodiversity corridors across Central Africa, supporting the scientific objectives of <strong><a href="https://tropicalforestscoping.com/" target="_blank" style="color: #2a5298; text-decoration: none;">PANGEA</a></strong>, a new terrestrial ecology field campaign.</p>
+        </section>
+
+        <section class="section">
+            <h2>Study Area</h2>
+            <p>Our project focuses on the Central African region, encompassing the Democratic Republic of the Congo (DRC), Republic of the Congo, Cameroon, Gabon, and Equatorial Guinea. The map below shows the study area with biodiversity intactness, protected areas, field sites, and elephant movement tracking locations.</p>
+            <img src="Study Area.png" alt="Central Africa Study Area - Biodiversity and Field Sites" class="study-area-map">
+        </section>
+
+        <section class="section">
+            <h2>Three-Phase Approach</h2>
+            <div class="phase-cards">
+                <div class="phase-card">
+                    <h3>What Then</h3>
+                    <p class="phase-subtitle">Historical State Analysis</p>
+                    <p>Understanding past conditions and drivers of change through long-term Earth observation records and historical data analysis.</p>
+                </div>
+                <div class="phase-card">
+                    <h3>What Now</h3>
+                    <p class="phase-subtitle">Current State Characterization</p>
+                    <p>Providing up-to-date assessments of forest structure, carbon storage, and biodiversity corridors using cutting-edge remote sensing and field measurements.</p>
+                </div>
+                <div class="phase-card">
+                    <h3>What Next</h3>
+                    <p class="phase-subtitle">Future Forecasting</p>
+                    <p>Projecting future ecosystem states under various climate and land-use scenarios to inform conservation strategies and policy decisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Key Objectives</h2>
+            <ul class="objectives-list">
+                <li>Integrate spaceborne, airborne, and in situ measurements to characterize forest structure and carbon storage</li>
+                <li>Quantify regional drivers of deforestation and habitat fragmentation</li>
+                <li>Model habitat suitability and biodiversity corridors for key species</li>
+                <li>Forecast changes in forest extent, carbon storage, and ecosystem services</li>
+                <li>Project future ecosystem states under climate change scenarios</li>
+                <li>Provide actionable insights for conservation planning and policy development</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Supporting PANGEA</h2>
+            <p>Our Earth System Digital Twin directly supports the PANGEA terrestrial ecology field campaign by:</p>
+            <ul class="objectives-list">
+                <li>Providing spatial context for field observations and measurements</li>
+                <li>Integrating multiple data streams from satellite, airborne, and ground-based sensors</li>
+                <li>Enabling hypothesis testing through data-model integration</li>
+                <li>Facilitating scenario exploration for conservation planning</li>
+                <li>Delivering near-term forecasts to guide adaptive management strategies</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jet Propulsion Laboratory | Principal Investigator: Seungwon Lee</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem;">Earth System Digital Twin for Central Africa Carbon and Biodiversity Corridors</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
